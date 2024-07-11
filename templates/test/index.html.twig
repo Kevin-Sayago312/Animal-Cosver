@@ -1,0 +1,56 @@
+{% extends 'index_base.html.twig' %}
+
+{% block title %} {{ parent() }} Test!{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Contesta las siguientes preguntas</p>
+						<h1>Examen</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- EMPIEZA EL SISTEMA EXPERTO -->
+<div id="interfaz" class="bg-dark">
+    <h2 class="text-light">Dale click en el botón "Empezar" para iniciar el examen</h2>
+    <button type="button" class="btn btn-info btn-lg mt-5" id="comenzar">Empezar</button>
+</div>
+
+<div id="diagnostico" class="tamaño bg-dark" style="display: none;">
+    <h2 class="text-light">Responde con "sí" o "no" según los síntomas que tenga tu mascota</h2>
+    <div id="imagen"></div>
+    <h3 id="pregunta" class="text-light"></h3>
+    <div class="d-flex justify-content-center mt-3">
+        <button id="si" class="btn btn-primary">Sí</button>
+        <button id="no" class="btn btn-primary">No</button>
+    </div>
+    <button id="reiniciar" class="btn btn-secondary h5">Reiniciar cuestionario</button>
+
+    <h2 class="mt-3 mb-3" id="info-resultado"></h2>
+    <p id="resultado" class="mt-3"></p>
+    <!-- Contenedor de Tratamientos -->
+    <div id="tratamientos" class="mt-3">
+        <h2 id="titulo_tratamiento">Tratamientos Recomendados</h2>
+        <div id="tratamiento" class="d-flex justify-content-center mt-3">
+        </div>
+        <div id="tratamientoContenido" class="container h3">
+        </div>
+    <script>
+    const guardarTratamientoUrl = "{{ path('guardar_tratamiento') }}";
+    const appUserId = "{{ app.user.id }}";
+    </script>
+    </div>
+</div>
+<!-- TERMINA EL SISTEMA EXPERTO -->
+
+
+{% endblock %}

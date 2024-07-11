@@ -1,0 +1,84 @@
+:root{
+    --verde-primario: #133c13;
+    --verde-oscuro: #133c13;
+    --verde-moho: #8b950b;
+    --azul-claro:#9dc3e6;
+    --verde-limon:#a9d18e;
+    --verde-oscuro:#385b15;
+    --white: #ffffff;
+    --black: #000000;
+    --azul-marino: #051922;
+    --verde:#0a3311;
+}
+
+/* EMPIEZA CODIGO PARA BOLA FLOTANTE DE REDES SOCIALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#btn-mas{
+    display: none;
+}
+
+.container-2{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999; /* Ajusta el valor de z-index para que esté delante de todo */
+}
+
+
+.redes a i {
+    font-size: 1.5rem; /* Ajusta el tamaño de los iconos */
+}
+
+.btn-mas i{
+    font-size: 2.5rem; /* Ajusta el tamaño de los iconos */
+}
+
+.redes a, .icon-mas2{
+    display: block;
+    text-decoration: none;
+    background-color: var(--verde-oscuro);
+    color: var(--white);
+    width: 5.5rem;
+    height: 5.5rem;
+    line-height: 5.5rem;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0,0.04);
+    transition: all 500ms ease;
+}
+
+.redes a:hover{
+    background-color: var(--verde-limon);
+    color: var(--verde-oscuro);
+}
+
+.redes a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-mas:checked~ .redes a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-mas2{
+    cursor: pointer;
+    background-color: var(--verde-primario);
+    font-size: 23px;
+}
+
+#btn-mas:checked ~ .btn-mas .icon-mas2{
+    transform: rotate(137deg);
+    font-size: 25px;
+}
+
+

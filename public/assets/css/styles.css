@@ -1,0 +1,69 @@
+:root{
+    --black-bg: #161a1c;
+    --black-principal: #0e1011;
+    --white: #ffffff;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--black-bg);
+}
+
+#interfaz, #diagnostico {
+    width: 80%;
+    margin: auto;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 1rem;
+}
+
+
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 7rem;
+    cursor: pointer;
+}
+
+
+button, #si, #no{
+    font-size: 3rem;
+}
+
+#imagen {
+    margin: 20px 0;
+}
+
+#resultado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card {
+    width: 18rem;
+    margin: 1rem;
+    display: inline-block;
+    vertical-align: top;
+}
+.card img {
+    height: 15rem;
+    object-fit: cover;
+}
+.card .card-body {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card .card-body .card-text {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+

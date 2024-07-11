@@ -1,0 +1,51 @@
+{% extends 'perfil_base.html.twig' %}
+
+{% block title %}Resultados{% endblock %}
+
+
+{% block body %}
+{{ parent() }}
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2 text-center">
+				<div class="breadcrumb-text">
+					<p>Tu perfil</p>
+					<h1>Tus resultados</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- EMPIEZA APARTADO DE COMPRAS -->
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card bg-secondary">
+                <div class="card-header">
+                    <h2 class="text-center">Tus diagnósticos</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-dark text-light">
+                            Resultado 1
+                            <button class="btn btn-primary btn-sm"> Ver más</button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-dark text-light">
+                            Resultado 2
+                            <button class="btn btn-primary btn-sm">Ver más</button>
+                        </li>
+                                            
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- TERMINA APARTADO DE COMPRAS -->
+{% endblock %}

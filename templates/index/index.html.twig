@@ -1,0 +1,50 @@
+{% extends 'perfil_base.html.twig' %}
+
+{% block title %} {{parent()}} ANIMAL COSVER!{% endblock %}
+
+{% block body %}
+{{parent()}}
+<body class="bg-secondary">
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Bienvenido al Sistema Experto</p>
+						<h1>Diagnóstico de enfermedades para mascotas</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- EMPIEZA SECCION DEL VIDEO Y QUIENES SOMOS-->
+	<div class="abt-section mb-150 mt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-bg">
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-text">
+						<p class="top-sub">¿Tu mascota tiene problemas de salud?</p>
+						<h2>Nuestra herramienta <span class="orange-text">ANIMAL COSVER</span></h2>
+						<p>En ANIMAL COSVER vas a consultar qué enfermedad tiene tu mascota
+						</p>
+						<a href="{{path('app_test')}}" class="boxed-btn mt-4">Realizar examen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- TERMINA SECCION DEL VIDEO Y QUIENES SOMOS-->
+
+
+	
+</body>
+</html>
+{% endblock %}

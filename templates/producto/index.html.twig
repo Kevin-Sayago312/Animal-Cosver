@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}diagnósticos{% endblock %}
+
+{% block body %}
+<body class="bg-dark">
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2 text-center">
+				<div class="breadcrumb-text">
+					<p>Tu perfil</p>
+					<h1>Aquí está tu información y los resultados</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end breadcrumb section -->
+     <h2 class="mb-4">Resultados de mis diagnósticos</h2>
+
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ app.session.flashBag.get('success')[0] }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+
+    
+
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Enfermedad</th>
+                <th>Descripcion</th>
+                <th>Tratamiento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for resultado in resultados %}
+            <tr>
+                <td>{{ resultado.id }}</td>
+                <td>{{ resultado.enfermedad }}</td>
+                <td>{{ resultado.descripcion }}</td>
+                <td>{{ resultado.tratamiento }}</td>
+                <td>
+                    <a href="{{ path('app_producto_show', {'id': resultado.id}) }}" class="btn btn-info btn-sm">Mostrar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6" class="text-center">No se encontraron tratamientos</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var borrarModal = document.getElementById('borrarModal');
+            var borrarForm = document.getElementById('borrarForm');
+            var productoIdInput = document.getElementById('resultadoId');
+            var confirmarBorrar = document.getElementById('confirmarBorrar');
+
+            borrarModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget; // El botón que activa el modal
+                var resultadoId = button.getAttribute('data-id'); // Extrae el ID del atributo data-id
+                productoIdInput.value = resultadoId; // Asigna el ID al campo oculto
+            });
+
+            confirmarBorrar.addEventListener('click', function () {
+                borrarForm.submit(); // Envía el formulario
+            });
+        });
+    </script>
+</body>
+{% endblock %}

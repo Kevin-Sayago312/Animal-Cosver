@@ -1,0 +1,48 @@
+{% extends 'perfil_base.html.twig' %}
+
+{% block title %}Mi Perfil!{% endblock %}
+
+{% block body %}
+<body class="bg-dark">
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2 text-center">
+				<div class="breadcrumb-text">
+					<p>Tu perfil</p>
+					<h1>Aquí está tu información y los resultados</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- EMPIEZA APARTADO DE INFORMACION DEL USUARIO -->
+<div class="config-perfil mt-5 mb-5 h3"> 
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card bg-secondary">
+                <div class="card-header">
+                    <h2 class="text-center">Mi Perfil</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-secondary text-light">
+                            Información Personal
+                            <a href="{{path('app_info_personal')}}" class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i></a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-secondary text-light">
+                            Resultados de mis diagnósticos
+                            <a href="{{path('app_producto_index')}}" class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- TERMINA APARTADO DE INFORMACION DEL USUARIO -->
+</body>
+{% endblock %}

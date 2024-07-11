@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resultados{% endblock %}
+
+{% block body %}
+    <h1>Resultados</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ resultado.id }}</td>
+            </tr>
+            <tr>
+                <th>Enfermedad</th>
+                <td>{{ resultado.enfermedad }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ resultado.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Tratamiento</th>
+                <td>{{ resultado.tratamiento }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_producto_index') }}">Regresar</a>
+
+    {{ include('producto/_delete_form.html.twig') }}
+{% endblock %}
